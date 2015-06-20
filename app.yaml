@@ -1,0 +1,13 @@
+application: mycdn-full
+version: online
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /(.*\.(htm|html|css|js|txt))$
+  static_files: site/\1
+  upload: site/.*\.(htm|html|css|js|txt)$
+  application_readable: true
+
+- url: /(.+)?/?
+  script: site/index.html
